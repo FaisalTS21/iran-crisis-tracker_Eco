@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>الأثر الاقتصادي — أزمة إيران ٢٠٢٦</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#040b14;--card:#0a1628;--card2:#0f1f3a;--card3:#152a4a;--border:#1a3050;--border2:#254060;--txt:#f0f4f8;--txt2:#8fa3be;--txt3:#5a7290;--blue:#0ea5e9;--cyan:#06d6d0;--gold:#f5a623;--green:#00d68f;--red:#ff4d6a;--purple:#a47de8;--orange:#ff8c42;--teal:#0cc0aa}
+body{font-family:'Segoe UI',Tahoma,sans-serif;background:var(--bg);color:var(--txt);min-height:100vh}
+.mono{font-family:'Courier New',monospace}
+
+/* Header */
+.hdr{background:linear-gradient(135deg,#0a1628 0%,#0d2240 50%,#0a1628 100%);border-bottom:1px solid var(--border);padding:16px 20px}
+.hdr-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px}
+.logo{display:flex;align-items:center;gap:12px}
+.logo-i{width:44px;height:44px;background:linear-gradient(135deg,#0ea5e9,#06d6d0);border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:22px;box-shadow:0 4px 20px rgba(14,165,233,.3)}
+.logo h1{font-size:16px;font-weight:700;color:#fff}
+.logo p{font-size:10px;color:var(--txt3)}
+.live{display:flex;align-items:center;gap:6px;background:rgba(0,214,143,.1);border:1px solid rgba(0,214,143,.3);border-radius:20px;padding:4px 14px;font-size:10px;color:var(--green)}
+.dot{width:6px;height:6px;background:var(--green);border-radius:50%;animation:p 2s infinite}
+@keyframes p{0%,100%{opacity:1}50%{opacity:.3}}
+
+/* Ticker */
+.ticker{display:flex;gap:16px;overflow-x:auto;padding:8px 0;-webkit-overflow-scrolling:touch}
+.tick{display:flex;align-items:center;gap:8px;background:var(--card2);border:1px solid var(--border);border-radius:10px;padding:6px 14px;flex-shrink:0}
+.tick-name{font-size:10px;color:var(--txt3)}.tick-val{font-family:'Courier New',monospace;font-size:14px;font-weight:700}
+.tick-chg{font-size:10px;font-weight:600;padding:1px 6px;border-radius:4px}
+.up{color:var(--green);background:rgba(0,214,143,.1)}.dn{color:var(--red);background:rgba(255,77,106,.1)}
+
+/* Nav */
+.nav{display:flex;gap:3px;background:var(--card);border:1px solid var(--border);border-radius:10px;padding:3px;margin:14px 20px 0}
+.nb{flex:1;padding:10px 8px;border-radius:7px;border:none;background:transparent;color:var(--txt2);font-family:inherit;font-size:11px;font-weight:600;cursor:pointer;text-align:center;transition:all .2s}
+.nb.a{background:linear-gradient(135deg,var(--blue),var(--cyan));color:#fff}
+
+main{padding:14px 20px 40px}
+section{display:none}section.a{display:block}
+
+/* Stats */
+.sg{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-bottom:14px}
+@media(min-width:600px){.sg{grid-template-columns:repeat(3,1fr)}}
+.st{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:14px;position:relative;overflow:hidden;transition:transform .15s}
+.st:active{transform:scale(.97)}
+.st::before{content:'';position:absolute;top:0;left:0;right:0;height:3px}
+.sc::before{background:var(--cyan)}.sg2::before{background:var(--gold)}.sr::before{background:var(--red)}.sp::before{background:var(--purple)}.so::before{background:var(--orange)}.stl::before{background:var(--teal)}.sgr::before{background:var(--green)}
+.si{font-size:18px;margin-bottom:2px}
+.sv{font-family:'Courier New',monospace;font-size:24px;font-weight:700;margin:3px 0}
+.sl{font-size:10px;color:var(--txt2)}.ss{font-size:9px;color:var(--txt3);margin-top:2px}
+
+/* Cards */
+.cd{background:var(--card);border:1px solid var(--border);border-radius:14px;overflow:hidden;margin-bottom:12px}
+.ch{padding:14px 16px 10px;border-bottom:1px solid rgba(26,48,80,.5);display:flex;align-items:center;justify-content:space-between}
+.ch h3{font-size:14px;font-weight:600;display:flex;align-items:center;gap:8px}.ch span{font-size:10px;color:var(--txt3)}
+.cb{padding:14px 16px}
+
+/* Tables */
+.ts{max-height:360px;overflow-y:auto}
+table{width:100%;border-collapse:collapse;font-size:11px}
+th{background:var(--card2);color:var(--txt3);padding:9px 12px;text-align:right;font-weight:600;font-size:10px;position:sticky;top:0;z-index:2}
+td{padding:8px 12px;border-bottom:1px solid rgba(26,48,80,.3)}
+.b{padding:2px 8px;border-radius:5px;font-size:9px;font-weight:600}
+.br{background:rgba(255,77,106,.12);color:#ff8fa3}.bg{background:rgba(0,214,143,.12);color:#66e8c4}
+.by{background:rgba(245,166,35,.12);color:#fcc96b}.bb{background:rgba(14,165,233,.12);color:#7dd3fc}
+
+/* Bars */
+.brow{display:flex;align-items:center;gap:6px;margin-bottom:8px}
+.bname{width:85px;font-size:10px;color:var(--txt2);text-align:right;flex-shrink:0}
+.btrack{flex:1;height:22px;background:rgba(26,48,80,.5);border-radius:5px;overflow:hidden}
+.bfill{height:100%;border-radius:5px;display:flex;align-items:center;justify-content:flex-end;padding:0 8px;font-size:9px;font-weight:600;color:#fff;transition:width 1.5s ease}
+
+/* Ship */
+.shg{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+.shc{background:var(--card2);border:1px solid var(--border);border-radius:10px;padding:12px;text-align:center}
+.shl{font-size:9px;color:var(--txt3);margin-bottom:6px}.shb{font-size:11px;color:var(--txt3);text-decoration:line-through}
+.sha{font-family:'Courier New',monospace;font-size:20px;font-weight:700;margin-top:3px}
+
+/* Forecast */
+.fc{background:var(--card2);border:1px solid var(--border);border-radius:10px;padding:12px 14px;display:flex;justify-content:space-between;align-items:center;margin-bottom:8px}
+.fn{font-size:12px;color:var(--txt2)}.fs{font-size:9px;color:var(--txt3)}.fp{font-family:'Courier New',monospace;font-weight:700;font-size:20px}
+
+/* AI */
+.ai{background:linear-gradient(135deg,rgba(14,165,233,.06),rgba(6,214,208,.06));border:1px solid rgba(14,165,233,.2);border-radius:14px;padding:16px;margin-bottom:12px}
+.ai h3{font-size:14px;display:flex;align-items:center;gap:8px;margin-bottom:10px}
+.abg{display:flex;flex-wrap:wrap;gap:8px}
+.ab{padding:9px 16px;border-radius:10px;border:none;background:linear-gradient(135deg,var(--blue),var(--cyan));color:#fff;font-family:inherit;font-size:11px;font-weight:600;cursor:pointer;transition:transform .1s;box-shadow:0 2px 10px rgba(14,165,233,.2)}
+.ab:active{transform:scale(.95)}.ab:disabled{opacity:.4}
+.ar{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:14px;margin-top:12px;font-size:12px;line-height:1.9;color:var(--txt2);white-space:pre-wrap;display:none}.ar.v{display:block}
+.al{display:none;align-items:center;gap:8px;color:var(--cyan);font-size:12px;margin-top:12px}.al.v{display:flex}
+.sp{width:16px;height:16px;border:2px solid var(--border);border-top-color:var(--cyan);border-radius:50%;animation:spin .8s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+.ft{border-top:1px solid var(--border);padding:20px;text-align:center}.ft p{font-size:10px;color:var(--txt3);line-height:1.8}
+</style>
+</head>
+<body>
+
+<header class="hdr">
+<div class="hdr-top">
+<div class="logo"><div class="logo-i">📊</div><div><h1>الأثر الاقتصادي — أزمة إيران</h1><p>Iran Crisis 2026 — Economic Impact Tracker</p></div></div>
+<div class="live"><div class="dot"></div>LIVE</div>
+</div>
+<div class="ticker">
+<div class="tick"><span class="tick-name">Brent</span><span class="tick-val" style="color:var(--cyan)">$72.48</span><span class="tick-chg dn">-8.7%</span></div>
+<div class="tick"><span class="tick-name">WTI</span><span class="tick-val" style="color:var(--gold)">$68.30</span><span class="tick-chg dn">-5.9%</span></div>
+<div class="tick"><span class="tick-name">TASI</span><span class="tick-val" style="color:var(--red)">10,700</span><span class="tick-chg dn">-2.2%</span></div>
+<div class="tick"><span class="tick-name">Aramco</span><span class="tick-val" style="color:var(--green)">25.64</span><span class="tick-chg up">+2.72%</span></div>
+<div class="tick"><span class="tick-name">EGX</span><span class="tick-val" style="color:var(--red)">27,105</span><span class="tick-chg dn">-2.5%</span></div>
+</div>
+</header>
+
+<div class="nav">
+<button class="nb a" onclick="go(0)">🛢️ النفط</button>
+<button class="nb" onclick="go(1)">🏦 الأسواق</button>
+<button class="nb" onclick="go(2)">⚓ الشحن والطيران</button>
+<button class="nb" onclick="go(3)">🤖 أخبار AI</button>
+</div>
+
+<main>
+
+<!-- OIL -->
+<section class="a" id="s0">
+<div class="sg">
+<div class="st sc"><div class="si">🛢️</div><div class="sv" style="color:var(--cyan)">$72.48</div><div class="sl">سعر برنت الحالي</div><div class="ss">٢ مارس ٢٠٢٦</div></div>
+<div class="st sg2"><div class="si">📈</div><div class="sv" style="color:var(--gold)">$79.41</div><div class="sl">أعلى سعر وصله</div><div class="ss">+9% في يوم واحد</div></div>
+<div class="st sr"><div class="si">⚡</div><div class="sv" style="color:var(--red)">+18.4%</div><div class="sl">ارتفاع من يناير</div><div class="ss">$61.2 → $72.48</div></div>
+</div>
+<div class="cd"><div class="ch"><h3>📈 مسار أسعار النفط</h3><span>يناير — مارس ٢٠٢٦</span></div><div class="cb"><div id="oC"></div></div></div>
+<div class="cd"><div class="ch"><h3>🔮 توقعات المحللين</h3></div><div class="cb">
+<div class="fc"><div><div class="fn">JP Morgan</div><div class="fs">السيناريو الأساسي</div></div><div class="fp" style="color:var(--txt3)">$60</div></div>
+<div class="fc"><div><div class="fn">Goldman Sachs</div><div class="fs">علاوة مخاطر جيوسياسية</div></div><div class="fp" style="color:var(--gold)">$85</div></div>
+<div class="fc"><div><div class="fn">Barclays</div><div class="fs">تصعيد عسكري</div></div><div class="fp" style="color:var(--orange)">$100</div></div>
+<div class="fc"><div><div class="fn">UBS</div><div class="fs">اضطراب حاد</div></div><div class="fp" style="color:var(--red)">$120</div></div>
+<div class="fc"><div><div class="fn">سيناريو متطرف</div><div class="fs">ضرب منشآت الخليج</div></div><div class="fp" style="color:#ff8fa3">$130+</div></div>
+</div></div>
+<div class="cd"><div class="ch"><h3>🌍 اعتماد الدول على نفط الخليج</h3></div><div class="cb">
+<div class="brow"><div class="bname">🇯🇵 اليابان</div><div class="btrack"><div class="bfill" style="width:90%;background:linear-gradient(90deg,var(--red),#ff8fa3)">90%</div></div></div>
+<div class="brow"><div class="bname">🇰🇷 كوريا الجنوبية</div><div class="btrack"><div class="bfill" style="width:75%;background:linear-gradient(90deg,var(--red),var(--orange))">75%</div></div></div>
+<div class="brow"><div class="bname">آسيا الإجمالي</div><div class="btrack"><div class="bfill" style="width:66%;background:linear-gradient(90deg,var(--orange),var(--gold))">66%</div></div></div>
+<div class="brow"><div class="bname">🇨🇳 الصين نفط</div><div class="btrack"><div class="bfill" style="width:45%;background:linear-gradient(90deg,var(--gold),var(--cyan))">45%</div></div></div>
+<div class="brow"><div class="bname">🇨🇳 الصين غاز</div><div class="btrack"><div class="bfill" style="width:30%;background:var(--blue)">30%</div></div></div>
+<div class="brow"><div class="bname">أوروبا</div><div class="btrack"><div class="bfill" style="width:20%;background:var(--teal)">20%</div></div></div>
+</div></div>
+</section>
+
+<!-- MARKETS -->
+<section id="s1">
+<div class="sg">
+<div class="st sr"><div class="si">🏦</div><div class="sv" style="color:var(--red)">-2.2%</div><div class="sl">TASI</div><div class="ss">أكبر انخفاض منذ أبريل</div></div>
+<div class="st sgr"><div class="si">📈</div><div class="sv" style="color:var(--green)">+2.72%</div><div class="sl">Aramco</div><div class="ss">ارتفع بسبب النفط</div></div>
+<div class="st sp"><div class="si">🚫</div><div class="sv" style="color:var(--purple)">4</div><div class="sl">بورصات معلّقة</div><div class="ss">الكويت الإمارات قطر</div></div>
+</div>
+<div class="cd"><div class="ch"><h3>🏦 أداء الأسواق</h3></div><div class="cb" id="mB"></div></div>
+<div class="cd"><div class="ch"><h3>📋 تفاصيل البورصات</h3></div><div class="cb ts" id="mT"></div></div>
+</section>
+
+<!-- SHIPPING -->
+<section id="s2">
+<div class="cd"><div class="ch"><h3>⚓ تأثير مضيق هرمز على الشحن</h3></div><div class="cb"><div class="shg">
+<div class="shc"><div class="shl">🛡️ تأمين الحرب</div><div class="shb">0.25%</div><div class="sha" style="color:var(--red)">0.50%</div></div>
+<div class="shc"><div class="shl">🚢 تكلفة عبور ناقلة $150M</div><div class="shb">$375K</div><div class="sha" style="color:var(--red)">$750K</div></div>
+<div class="shc"><div class="shl">📦 أسعار الشحن</div><div class="shb">1x</div><div class="sha" style="color:var(--orange)">5-7x</div></div>
+<div class="shc"><div class="shl">🌍 أيام إضافية (تحويل)</div><div class="shb">0 يوم</div><div class="sha" style="color:var(--gold)">10-14</div></div>
+</div></div></div>
+<div class="cd"><div class="ch"><h3>✈️ حالة الطيران والمطارات</h3></div><div class="cb ts" id="aT"></div></div>
+</section>
+
+<!-- AI NEWS -->
+<section id="s3">
+<div class="ai">
+<h3>🤖 أخبار اقتصادية — AI</h3>
+<p style="font-size:11px;color:var(--txt2);margin-bottom:12px">Claude يبحث في الإنترنت عن آخر الأخبار الاقتصادية المتعلقة بالأزمة</p>
+<div class="abg">
+<button class="ab" onclick="aiQ('مالك الروقي alrougui إيران اقتصاد')">🎙️ مالك الروقي</button>
+<button class="ab" onclick="aiQ('Brent oil price today Iran crisis')">🛢️ أسعار النفط</button>
+<button class="ab" onclick="aiQ('Gulf stock markets TASI Aramco Iran')">🏦 الأسواق الخليجية</button>
+<button class="ab" onclick="aiQ('Strait of Hormuz shipping Iran crisis')">⚓ الشحن وهرمز</button>
+<button class="ab" onclick="aiQ('Middle East flights cancelled airports Iran')">✈️ الطيران</button>
+</div>
+<div class="al" id="aiL"><div class="sp"></div>جاري البحث...</div>
+<div class="ar" id="aiR"></div>
+</div>
+</section>
+</main>
+
+<footer class="ft">
+<p>⚠️ مشروع تحليل بيانات تعليمي — ليس نصيحة استثمارية</p>
+<p style="margin-top:6px">صنع بواسطة <span style="color:var(--cyan);font-weight:700">فيصل فهد العليان</span> — مارس ٢٠٢٦</p>
+</footer>
+
+<script>
+function go(i){document.querySelectorAll('section').forEach(function(s,j){s.className=j===i?'a':''});document.querySelectorAll('.nb').forEach(function(b,j){b.className=j===i?'nb a':'nb'})}
+
+var od={d:['Jan 2','Jan 8','Jan 10','Jan 15','Jan 20','Jan 25','Jan 30','Feb 3','Feb 7','Feb 10','Feb 12','Feb 14','Feb 17','Feb 19','Feb 21','Feb 24','Feb 25','Feb 26','Feb 27','Feb 28','Mar 1','Mar 2'],b:[61.2,62.45,63.1,62.3,61.8,63.5,64.2,65.8,67.4,68,67.4,66.8,67.9,69.3,68.5,69.8,70.2,71,72.87,75.5,79.41,72.48],w:[57.8,58.9,59.55,58.7,58.2,59.9,60.5,62.1,63.8,64.3,63.6,63,64.1,65.5,64.7,66,66.4,67.1,68.8,71.2,72.57,68.3]};
+function oSVG(id){var W=600,H=220,pT=20,pB=30,pL=40,pR=10,cW=W-pL-pR,cH=H-pT-pB,mn=55,mx=82;function gx(i){return pL+(i/(od.b.length-1))*cW}function gy(v){return pT+cH-(((v-mn)/(mx-mn))*cH)}var bp='',wp='',ba='';for(var i=0;i<od.b.length;i++){bp+=(i===0?'M':'L')+gx(i).toFixed(1)+','+gy(od.b[i]).toFixed(1)+' ';wp+=(i===0?'M':'L')+gx(i).toFixed(1)+','+gy(od.w[i]).toFixed(1)+' ';ba+=(i===0?'M':'L')+gx(i).toFixed(1)+','+gy(od.b[i]).toFixed(1)+' '}ba+='L'+gx(od.b.length-1).toFixed(1)+','+(H-pB)+' L'+pL+','+(H-pB)+' Z';var s='<svg viewBox="0 0 '+W+' '+H+'" style="width:100%;height:auto"><defs><linearGradient id="g1" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#06d6d0" stop-opacity="0.25"/><stop offset="100%" stop-color="#06d6d0" stop-opacity="0.02"/></linearGradient></defs>';for(var g=55;g<=80;g+=5){s+='<line x1="'+pL+'" y1="'+gy(g).toFixed(1)+'" x2="'+(W-pR)+'" y2="'+gy(g).toFixed(1)+'" stroke="#1a3050" stroke-dasharray="3,3" opacity=".5"/><text x="'+(pL-4)+'" y="'+(gy(g)+3).toFixed(1)+'" fill="#5a7290" font-size="9" text-anchor="end">$'+g+'</text>'}for(var i=0;i<od.d.length;i+=4){s+='<text x="'+gx(i).toFixed(1)+'" y="'+(H-8)+'" fill="#5a7290" font-size="8" text-anchor="middle">'+od.d[i]+'</text>'}s+='<path d="'+ba+'" fill="url(#g1)"/><path d="'+bp+'" fill="none" stroke="#06d6d0" stroke-width="2.5" stroke-linecap="round"/><path d="'+wp+'" fill="none" stroke="#f5a623" stroke-width="1.5" stroke-dasharray="6,3"/>';s+='<circle cx="'+gx(20).toFixed(1)+'" cy="'+gy(79.41).toFixed(1)+'" r="5" fill="#ff4d6a" stroke="#040b14" stroke-width="2"/><text x="'+(gx(20)-2).toFixed(1)+'" y="'+(gy(79.41)-10).toFixed(1)+'" fill="#ff4d6a" font-size="10" text-anchor="middle" font-weight="bold">$79.41</text>';s+='<circle cx="'+gx(21).toFixed(1)+'" cy="'+gy(72.48).toFixed(1)+'" r="4" fill="#06d6d0" stroke="#040b14" stroke-width="2"/><text x="'+gx(21).toFixed(1)+'" y="'+(gy(72.48)-10).toFixed(1)+'" fill="#06d6d0" font-size="9" text-anchor="middle">$72.48</text>';s+='<rect x="'+(W-95)+'" y="5" width="85" height="30" rx="6" fill="rgba(10,22,40,.9)" stroke="#1a3050"/><line x1="'+(W-88)+'" y1="15" x2="'+(W-74)+'" y2="15" stroke="#06d6d0" stroke-width="2.5"/><text x="'+(W-70)+'" y="18" fill="#8fa3be" font-size="8">Brent</text><line x1="'+(W-88)+'" y1="27" x2="'+(W-74)+'" y2="27" stroke="#f5a623" stroke-width="1.5" stroke-dasharray="4,2"/><text x="'+(W-70)+'" y="30" fill="#8fa3be" font-size="8">WTI</text></svg>';document.getElementById(id).innerHTML=s}
+
+var mks=[{n:'Aramco',v:2.72},{n:'Oman MSX',v:-1.45},{n:'Bahrain BAX',v:-0.5},{n:'Saudi TASI',v:-2.2},{n:'Egypt EGX',v:-2.5}];
+function rMB(){var h='';mks.forEach(function(m){var w=Math.abs(m.v)*16;var c=m.v>=0?'linear-gradient(90deg,#00d68f,#66e8c4)':'linear-gradient(90deg,#ff4d6a,#ff8fa3)';h+='<div class="brow"><div class="bname">'+m.n+'</div><div class="btrack"><div class="bfill" style="width:'+w+'%;background:'+c+'">'+(m.v>0?'+':'')+m.v+'%</div></div></div>'});document.getElementById('mB').innerHTML=h}
+
+var mkd=[{m:'🇸🇦 TASI',c:-2.2,s:'Open',n:'أكبر انخفاض منذ أبريل'},{m:'🇸🇦 Aramco',c:2.72,s:'Open',n:'ارتفع بسبب النفط'},{m:'🇪🇬 EGX 30',c:-2.5,s:'Open',n:'8% تراجع منذ فبراير'},{m:'🇴🇲 MSX 30',c:-1.45,s:'Open',n:'معتدل'},{m:'🇧🇭 BAX',c:-0.5,s:'Open',n:'مختلط'},{m:'🇰🇼 Boursa Kuwait',c:0,s:'Suspended',n:'أول بورصة تعلّق'},{m:'🇦🇪 ADX',c:0,s:'Suspended',n:'مغلق مارس 2-3'},{m:'🇦🇪 DFM',c:0,s:'Suspended',n:'مليارات متوقفة'},{m:'🇶🇦 QSE',c:0,s:'Suspended',n:'أجواء مغلقة'}];
+function rMT(){var h='<table><thead><tr><th>البورصة</th><th>الحالة</th><th>التغيير</th><th>ملاحظات</th></tr></thead><tbody>';mkd.forEach(function(m){var sb=m.s==='Suspended'?'br':'bg';var cc=m.c>0?'color:var(--green)':m.c<0?'color:var(--red)':'color:var(--txt3)';h+='<tr><td style="font-weight:600">'+m.m+'</td><td><span class="b '+sb+'">'+m.s+'</span></td><td class="mono" style="'+cc+';font-weight:600">'+(m.c>0?'+':'')+m.c+'%</td><td style="font-size:10px;color:var(--txt2)">'+m.n+'</td></tr>'});h+='</tbody></table>';document.getElementById('mT').innerHTML=h}
+
+var avd=[{e:'Dubai (DXB)',s:'Suspended',d:'4 جرحى في ضربة'},{e:'Abu Dhabi (AUH)',s:'Suspended',d:'1 قتيل 7 جرحى — مسيّرة'},{e:'Hamad (DOH)',s:'Suspended',d:'أجواء مغلقة بالكامل'},{e:'Kuwait (KWI)',s:'Damaged',d:'ضربة — العمليات متوقفة'},{e:'Emirates',s:'Suspended',d:'جميع الرحلات'},{e:'Qatar Airways',s:'Suspended',d:'المطار مغلق'},{e:'Etihad',s:'Suspended',d:'جميع الرحلات'},{e:'Lufthansa Group',s:'Partial',d:'بعض المسارات معلّقة'},{e:'British Airways',s:'Partial',d:'إعادة توجيه'},{e:'Air India',s:'Suspended',d:'مسارات الشرق الأوسط'}];
+function rAT(){var h='<table><thead><tr><th>الجهة</th><th>الحالة</th><th>التفاصيل</th></tr></thead><tbody>';avd.forEach(function(a){var sb=(a.s==='Suspended'||a.s==='Damaged')?'br':'by';h+='<tr><td style="font-weight:600">'+a.e+'</td><td><span class="b '+sb+'">'+a.s+'</span></td><td style="font-size:10px;color:var(--txt2)">'+a.d+'</td></tr>'});h+='</tbody></table>';document.getElementById('aT').innerHTML=h}
+
+function extractText(d){var t='';if(d&&d.content){for(var i=0;i<d.content.length;i++){if(d.content[i].type==='text'&&d.content[i].text){t+=d.content[i].text+'\n'}}}return t.trim()}
+function aiQ(q){var ld=document.getElementById('aiL'),rs=document.getElementById('aiR');ld.className='al v';rs.className='ar';document.querySelectorAll('.ab').forEach(function(b){b.disabled=true});fetch('https://api.anthropic.com/v1/messages',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({model:'claude-sonnet-4-20250514',max_tokens:1000,tools:[{type:'web_search_20250305',name:'web_search'}],messages:[{role:'user',content:'ابحث عن: '+q+'\nأعطني ملخص عربي لآخر 5 أخبار اقتصادية. مختصر. إيموجي. من الأحدث. أذكر المصادر.'}]})}).then(function(r){return r.json()}).then(function(d){var t=extractText(d);rs.textContent=t||'لا نتائج';rs.className='ar v'}).catch(function(e){rs.textContent='خطأ: '+e.message;rs.className='ar v'}).finally(function(){ld.className='al';document.querySelectorAll('.ab').forEach(function(b){b.disabled=false})})}
+
+oSVG('oC');rMB();rMT();rAT();
+</script>
+</body>
+</html>
